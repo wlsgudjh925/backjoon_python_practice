@@ -10,12 +10,12 @@ def func(n, x, y):
             return 3
     else:
         half = 2 ** (n-1)
-        if x >= half and y >= half:
-            return 4 ** (n-1) * 3 + func(n-1, x-half, y-half)
-        elif x >= half and y < half:
+        if x >= half and y < half:
             return 4 ** (n-1) + func(n-1, x-half, y)
         elif x < half and y >= half:
             return 4 ** (n-1) * 2 + func(n-1, x, y-half)
+        elif x >= half and y >= half:
+            return 4 ** (n-1) * 3 + func(n-1, x-half, y-half)
         elif x < half and y < half:
             return func(n-1, x, y)
 

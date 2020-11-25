@@ -1,6 +1,3 @@
-import sys
-input = sys.stdin.readline
-
 count = int(input())
 stack = []
 for i in range(0, count):
