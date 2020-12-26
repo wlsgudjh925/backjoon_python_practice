@@ -1,25 +1,21 @@
 n, k = map(int, input().split())
-inp = []
-out = []
-a = 1
-b = -1
 
-for i in range(1, n+1):
-    inp.append(i)
+que = []
 
-while len(inp) != 1:
-    x = len(inp)
-    while k*a+b <= x:
-        out.append(inp[k*a+b])
-        print(inp)
-        a = a + 1
-        if k*a+b == x:
-            break
-    for i in out:
-        if inp.count(i) == 1:
-            inp.remove(i)
-    a = 0
-    b = x % k
+for i in range(n):
+    que.append(i+1)
 
-out.append(inp[0])
-print('<'+", ".join(map(str, out))+'>')
+print("<", end="")
+
+while len(que) != 0:
+    for i in range(k-1):
+        que.append(que[0])
+        que.pop(0)
+    if len(que) != 1:
+        print(que[0], end="")
+        print(",", end=" ")
+    else:
+        print(que[0], end="")
+    que.pop(0)
+
+print(">", end="")
