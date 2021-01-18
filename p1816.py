@@ -10,12 +10,12 @@ for i in range(2, n+1):
 
 N = int(input())
 for i in range(N):
-    a = True
+    b = True
     S = int(input())
     for j in primes:
         if S % j == 0:
-            a = False
-    if a == True:
+            b = False
+    if b == True:
         print("YES")
     else:
         print("NO")
